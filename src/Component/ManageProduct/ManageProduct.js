@@ -19,10 +19,16 @@ const ManageProduct = () => {
         .then(res => res.json())
         .then(data=>{
             if(data){
+                deleteProduct ();
                 alert('Product Deleted')
             }
         })
     }
+    const deleteProduct  = () =>{
+        fetch(`https://murmuring-shore-08576.herokuapp.com/products`)
+        .then(res =>res.json())
+        .then(data => setProducts(data))
+       }
 
 
     return (
